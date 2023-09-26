@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>My Project之摄影设备管理小程序</title>
+    <url>/2023/09/26/project_wms/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>学校摄影社的设备管理起来太麻烦，需要我们做一个摄影设备管理的小程序，于是 WMS 就诞生了。<br>WMS 算是我的第一个正式项目，虽然好像也挺简单的，由 YuYa 大佬牵头，我在其中学到了不少东西，写的不好，还有很多改进的空间，希望大佬们提出宝贵的意见，不胜感激。 – Xiaofan</p>
+</blockquote>
+<h2 id="WMS"><a href="#WMS" class="headerlink" title="WMS"></a>WMS</h2><blockquote>
+<p>WMS 是一款使用 uni-app 开发的轻量级摄影设备管理小程序。</p>
+</blockquote>
+<p><a href="https://github.com/xfanweb/WMS/releases/latest"><img src="https://img.shields.io/github/v/release/xfanweb/WMS?color=231ab1ad&label=Releases" alt="GitHub Releases" /></a></p>
+<h2 id="🌈-扫码体验"><a href="#🌈-扫码体验" class="headerlink" title="🌈 扫码体验"></a>🌈 扫码体验</h2><p><img src="/post_image/sample.png" alt="体验小程序"></p>
+<h2 id="🎉-功能详细"><a href="#🎉-功能详细" class="headerlink" title="🎉 功能详细"></a>🎉 功能详细</h2><ul>
+<li>扫描设备上的二维码即可进行借还操作</li>
+<li>支持查看该设备的历史借还记录</li>
+<li>该设备历史借还记录支持通过姓名手机号进行模糊搜索</li>
+<li>附带简易的后台管理</li>
+<li>查看当前已借出设备的信息</li>
+<li>添加与查看库存</li>
+<li>查询所有设备的历史记录支持模糊搜索</li>
+</ul>
+<blockquote>
+<p>ps：你问我为什么这么少功能？因为便宜…</p>
+</blockquote>
+<h2 id="💻-安装说明"><a href="#💻-安装说明" class="headerlink" title="💻 安装说明"></a>💻 安装说明</h2><ol>
+<li>克隆仓库</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/xfanweb/WMS.git</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装依赖</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>打开 HBuilder X 导入项目.</li>
+<li>打开 manifest.json 获取自己的 AppID 同时配置好自己的微信小程序 AppID.</li>
+<li>登录 uniCloud 后台 <a href="https://unicloud.dcloud.net.cn/">https://unicloud.dcloud.net.cn/</a> 新建服务空间（有个开发版让你白嫖，正式项目推荐按量计费）或者选已有空间,新建两个数据库 record stock,可将 stock.json 导入到 stock.</li>
+<li>右键 uniCloud 文件夹云服务初始化,选择刚刚的服务空间.</li>
+<li>点击运行到小程序模拟器安装流程到此结束.</li>
+</ol>
+<h2 id="✨-贡献者"><a href="#✨-贡献者" class="headerlink" title="✨ 贡献者"></a>✨ 贡献者</h2><a href="https://github.com/xfanweb/wms/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=xfanweb/wms" />
+</a>
+
+<ul>
+<li>20 届 YuYa &amp; Xiaofan 编写</li>
+<li>21 届 CreeperNatuDisa &amp; longyu &amp; hoob-y &amp; liuzi 维护</li>
+<li>后续维护人员敬请期待~</li>
+</ul>
+<h2 id="📷-截图"><a href="#📷-截图" class="headerlink" title="📷 截图"></a>📷 截图</h2><p><img src="/post_image/screenshot1.jpg" alt="截图1"><br><img src="/post_image/screenshot2.jpg" alt="截图2"><br><img src="/post_image/screenshot3.jpg" alt="截图3"><br><img src="/post_image/screenshot4.jpg" alt="截图4"></p>
+]]></content>
+      <categories>
+        <category>我的项目</category>
+      </categories>
+  </entry>
+  <entry>
     <title>VMware虚拟机网络配置</title>
     <url>/2023/09/25/vm_network/</url>
     <content><![CDATA[<h2 id="问题复现及解决思路"><a href="#问题复现及解决思路" class="headerlink" title="问题复现及解决思路"></a>问题复现及解决思路</h2><blockquote>
@@ -19,5 +74,8 @@
 </blockquote>
 <p><img src="/post_image/VMware3.png" alt="更改成目前正在使用的适配器即可"></p>
 ]]></content>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
   </entry>
 </search>
