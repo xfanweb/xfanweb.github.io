@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>My Project之摄影设备管理小程序 | Fan's Blog</title><meta name="author" content="FanO.o"><meta name="copyright" content="FanO.o"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言 学校摄影社的设备管理起来太麻烦，需要我们做一个摄影设备管理的小程序，于是 WMS 就诞生了。WMS 算是我的第一个正式项目，虽然好像也挺简单的，由 YuYa 大佬牵头，我在其中学到了不少东西，写的不好，还有很多改进的空间，希望大佬们提出宝贵的意见，不胜感激。 — Xiaofan  WMS WMS 是一款使用 uni-app 开发的轻量级摄影设备管理小程序。   🌈 扫码体验 🎉 功能详细">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My Project之摄影设备管理小程序">
+<meta property="og:url" content="https://www.richfan.cn/2023/09/26/project_wms/index.html">
+<meta property="og:site_name" content="Fan&#39;s Blog">
+<meta property="og:description" content="前言 学校摄影社的设备管理起来太麻烦，需要我们做一个摄影设备管理的小程序，于是 WMS 就诞生了。WMS 算是我的第一个正式项目，虽然好像也挺简单的，由 YuYa 大佬牵头，我在其中学到了不少东西，写的不好，还有很多改进的空间，希望大佬们提出宝贵的意见，不胜感激。 — Xiaofan  WMS WMS 是一款使用 uni-app 开发的轻量级摄影设备管理小程序。   🌈 扫码体验 🎉 功能详细">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.richfan.cn/post_image/wmslogo.png">
+<meta property="article:published_time" content="2023-09-26T10:42:32.958Z">
+<meta property="article:modified_time" content="2024-01-17T04:30:30.702Z">
+<meta property="article:author" content="FanO.o">
+<meta property="article:tag" content="小凡全栈,xfanweb,Fan&#39;s Blog,FanO.o">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.richfan.cn/post_image/wmslogo.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.richfan.cn/2023/09/26/project_wms/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'My Project之摄影设备管理小程序',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-17 12:30:30'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://q2.qlogo.cn/headimg_dl?dst_uin=2194899455&amp;spec=100" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery"><i class="fa-fw fas fa-image"></i><span> 相册</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/post_image/wmslogo.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Fan's Blog"><span class="site-name">Fan's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery"><i class="fa-fw fas fa-image"></i><span> 相册</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">My Project之摄影设备管理小程序</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-26T10:42:32.958Z" title="发表于 2023-09-26 18:42:32">2023-09-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-17T04:30:30.702Z" title="更新于 2024-01-17 12:30:30">2024-01-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E9%A1%B9%E7%9B%AE/">我的项目</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">444</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="My Project之摄影设备管理小程序"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>学校摄影社的设备管理起来太麻烦，需要我们做一个摄影设备管理的小程序，于是 WMS 就诞生了。<br>WMS 算是我的第一个正式项目，虽然好像也挺简单的，由 YuYa 大佬牵头，我在其中学到了不少东西，写的不好，还有很多改进的空间，希望大佬们提出宝贵的意见，不胜感激。 — Xiaofan</p>
+</blockquote>
+<h2 id="WMS"><a href="#WMS" class="headerlink" title="WMS"></a>WMS</h2><blockquote>
+<p>WMS 是一款使用 uni-app 开发的轻量级摄影设备管理小程序。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/xfanweb/WMS/releases/latest"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/github/v/release/xfanweb/WMS?color=231ab1ad&label=Releases" alt="GitHub Releases" /></a></p>
+<h2 id="🌈-扫码体验"><a href="#🌈-扫码体验" class="headerlink" title="🌈 扫码体验"></a>🌈 扫码体验</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../post_image/sample.png" alt="体验小程序"></p>
+<h2 id="🎉-功能详细"><a href="#🎉-功能详细" class="headerlink" title="🎉 功能详细"></a>🎉 功能详细</h2><ul>
+<li>扫描设备上的二维码即可进行借还操作</li>
+<li>支持查看该设备的历史借还记录</li>
+<li>该设备历史借还记录支持通过姓名手机号进行模糊搜索</li>
+<li>附带简易的后台管理</li>
+<li>查看当前已借出设备的信息</li>
+<li>添加与查看库存</li>
+<li>查询所有设备的历史记录支持模糊搜索</li>
+</ul>
+<blockquote>
+<p>ps：你问我为什么这么少功能？因为便宜…</p>
+</blockquote>
+<h2 id="💻-安装说明"><a href="#💻-安装说明" class="headerlink" title="💻 安装说明"></a>💻 安装说明</h2><ol>
+<li>克隆仓库</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/xfanweb/WMS.git</span><br></pre></td></tr></table></figure>
+<ol>
+<li>安装依赖</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<ol>
+<li>打开 HBuilder X 导入项目.</li>
+<li>打开 manifest.json 获取自己的 AppID 同时配置好自己的微信小程序 AppID.</li>
+<li>登录 uniCloud 后台 <a target="_blank" rel="noopener" href="https://unicloud.dcloud.net.cn/">https://unicloud.dcloud.net.cn/</a> 新建服务空间（有个开发版让你白嫖，正式项目推荐按量计费）或者选已有空间,新建两个数据库 record stock,可将 stock.json 导入到 stock.</li>
+<li>右键 uniCloud 文件夹云服务初始化,选择刚刚的服务空间.</li>
+<li>点击运行到小程序模拟器安装流程到此结束.</li>
+</ol>
+<h2 id="✨-贡献者"><a href="#✨-贡献者" class="headerlink" title="✨ 贡献者"></a>✨ 贡献者</h2><p><a target="_blank" rel="noopener" href="https://github.com/xfanweb/wms/graphs/contributors"><br>  <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://contrib.rocks/image?repo=xfanweb/wms" />
+</a></p>
+<ul>
+<li>20 届 YuYa &amp; Xiaofan 编写</li>
+<li>21 届 CreeperNatuDisa &amp; longyu &amp; hoob-y &amp; liuzi 维护</li>
+<li>后续维护人员敬请期待~</li>
+</ul>
+<h2 id="📷-截图"><a href="#📷-截图" class="headerlink" title="📷 截图"></a>📷 截图</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../post_image/screenshot1.jpg" alt="截图1"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../post_image/screenshot2.jpg" alt="截图2"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../post_image/screenshot3.jpg" alt="截图3"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../post_image/screenshot4.jpg" alt="截图4"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.richfan.cn">FanO.o</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.richfan.cn/2023/09/26/project_wms/">https://www.richfan.cn/2023/09/26/project_wms/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.richfan.cn" target="_blank">Fan's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/post_image/wmslogo.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/03/19/software/" title="软件安装与开发环境配置"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/gallery/img/img1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">软件安装与开发环境配置</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/25/vm_network/" title="VMware虚拟机网络配置"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/gallery/img/img2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">VMware虚拟机网络配置</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://q2.qlogo.cn/headimg_dl?dst_uin=2194899455&amp;spec=100" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">FanO.o</div><div class="author-info__description">记录学习历程及生活点滴</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xfanweb"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:bs3412@88.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WMS"><span class="toc-number">2.</span> <span class="toc-text">WMS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8C%88-%E6%89%AB%E7%A0%81%E4%BD%93%E9%AA%8C"><span class="toc-number">3.</span> <span class="toc-text">🌈 扫码体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%89-%E5%8A%9F%E8%83%BD%E8%AF%A6%E7%BB%86"><span class="toc-number">4.</span> <span class="toc-text">🎉 功能详细</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%BB-%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E"><span class="toc-number">5.</span> <span class="toc-text">💻 安装说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%A8-%E8%B4%A1%E7%8C%AE%E8%80%85"><span class="toc-number">6.</span> <span class="toc-text">✨ 贡献者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%B7-%E6%88%AA%E5%9B%BE"><span class="toc-number">7.</span> <span class="toc-text">📷 截图</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/19/software/" title="软件安装与开发环境配置"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/gallery/img/img1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件安装与开发环境配置"/></a><div class="content"><a class="title" href="/2024/03/19/software/" title="软件安装与开发环境配置">软件安装与开发环境配置</a><time datetime="2024-03-19T15:06:38.133Z" title="发表于 2024-03-19 23:06:38">2024-03-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/26/project_wms/" title="My Project之摄影设备管理小程序"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post_image/wmslogo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="My Project之摄影设备管理小程序"/></a><div class="content"><a class="title" href="/2023/09/26/project_wms/" title="My Project之摄影设备管理小程序">My Project之摄影设备管理小程序</a><time datetime="2023-09-26T10:42:32.958Z" title="发表于 2023-09-26 18:42:32">2023-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/25/vm_network/" title="VMware虚拟机网络配置"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/gallery/img/img2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VMware虚拟机网络配置"/></a><div class="content"><a class="title" href="/2023/09/25/vm_network/" title="VMware虚拟机网络配置">VMware虚拟机网络配置</a><time datetime="2023-09-25T15:37:56.341Z" title="发表于 2023-09-25 23:37:56">2023-09-25</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/post_image/wmslogo.png')"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By FanO.o</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">粤ICP备2023091769号-2</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'PLMGLgUTOUrQvBpoqV158Cn7-gzGzoHsz',
+      appKey: 'qnKcrIeIvSh1LtKm8dJpxgSj',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
